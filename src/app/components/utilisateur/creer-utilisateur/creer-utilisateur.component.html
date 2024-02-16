@@ -1,0 +1,44 @@
+<body class="sub_page">
+
+<div class="hero_area">
+
+</div>
+
+<!-- contact section -->
+<section class="contact_section  long_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <div class="heading_container">
+            <h2>
+              Créer Utilisateur
+            </h2>
+          </div>
+          <form  [formGroup]="registerUserForm">
+
+            <div>
+              <input type="text" placeholder="prenom" formControlName="firstName" />
+            </div>
+            <div>
+              <input type="text" formControlName="lastName" placeholder="nom" />
+            </div>
+            <div>
+              <input type="email" formControlName="email" placeholder="Email" />
+            </div>
+            <div>
+              <input type="text" formControlName="phoneNumber" placeholder="telephone" />
+            </div>
+
+            <div class="btn_box" (click)="onSubmit()">
+              <button >
+                Envoyer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
