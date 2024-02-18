@@ -1,0 +1,54 @@
+<div class="contact_section  container pb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="card-title text-center">Vérification du Compteur</h5>
+                </div>
+                <div class="card-body">
+                
+                    @if(verificationSuccess) {
+                        <div class="alert alert-success" role="alert">
+                            Compteur vérifié avec succès!
+                        </div>
+                    }
+
+                    @if(!verificationSuccess) {
+                        <form>
+                            <div class="form-group">
+                                <label for="numeroCompteur">Numéro du compteur:</label>
+                                <input type="text" id="numeroCompteur" class="form-control" [(ngModel)]="numeroCompteur"
+                                    name="numeroCompteur" placeholder="Entrez le numéro du compteur">
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <button type="button" class="btn btn-lg btn-primary mt-3 text-center"
+                                    (click)="verifierCompteur()">Vérifier</button>
+                            </div>
+                        </form>
+                    }
+
+                    @if(compteurNotExist) {
+                        <div class="alert alert-danger my-1" role="alert">
+                            Le compteur que vous avez spécifié n'a pas été trouvé dans notre système.
+                             Veuillez vérifier le numéro du compteur et réessayer.
+                        </div>
+                        <div class="alert alert-info my-1" role="alert">
+                            Si vous n'avez pas de compteur, vous pouvez  <a [routerLink]="['/verifier-proprietaire']" >commander</a>
+
+                        </div>
+
+                    }
+
+                    @if(verificationSuccess) {
+                        <div class="d-flex justify-content-around mt-3">
+                            <button type="button" class="btn btn-success ml-2"  (click)="voirCompteur()">Voir</button>
+                            <button type="button" class="btn btn-primary ml-2" (click)="fairePrepaiement()">Faire un Prépaiement</button>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

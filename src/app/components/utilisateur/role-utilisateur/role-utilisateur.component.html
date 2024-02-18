@@ -1,0 +1,18 @@
+<div class="container py-3 card parentDiv">
+  <div class=" row " >
+    <div class="col-6 " *ngIf="userRoles.length!==0">
+      <h5>The user <span class="email">{{email}}</span> has this(these) role(s):</h5>
+      <div *ngFor="let role of userRoles">
+        <span>{{role.name}}</span>
+        <span (click)="onRemoveRoleFromUser(role.name)" title="This button remove the related role from the user" ><i class="bi bi-x-circle"></i></span>
+      </div>
+    </div>
+    <div class="col-6 " *ngIf="rolesToAssign.length!==0">
+      <h5>Assign an other role to <span class="email">{{email}}</span></h5>
+      <div *ngFor="let role of rolesToAssign">
+        <span>{{role.name}}</span>
+        <span title="This button assigns the corresponding role to the corresponding user"  (click)="onAssign(role.name)"><i class="bi bi-plus-circle"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

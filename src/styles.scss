@@ -1015,3 +1015,31 @@ a:focus {
     max-width: 1170px;
   }
 }
+
+
+
+
+/* Styles pour les boutons */
+/* Styles pour les boutons */
+.custom-button {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  color: #6bb7be;
+  background-color: #fff;
+  border: 1px solid #6bb7be;
+  border-radius: 10px;
+}
+
+.custom-button:hover {
+  background-color: #6bb7be;
+  color: #fff;
+  border-color: #6bb7be;
+}
+

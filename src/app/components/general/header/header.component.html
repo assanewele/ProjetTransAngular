@@ -1,57 +1,87 @@
 <!-- header section strats -->
-<header class="header_section long_section px-0">
-  <nav class="navbar navbar-expand-lg custom_nav-container ">
-    <a class="navbar-brand" href="index.html">
-          <span>
-            <div class="img-box">
-              <img src="assets/images/seneaun.png" alt="">
-            </div>
-          </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class=""> </span>
-    </button>
+<header class="header_section long_section px-0 bg-white" style="margin-bottom: 20px">
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
-        <ul class="navbar-nav  ">
-          <li class="nav-item ">
-            <a class="nav-link">Accueil <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="about.html"> SEN'EAU</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="furniture.html">SERVICES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blog.html">COMPTEUR</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inscription.html">PREPAIEMENT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inscription.html">AAR-SEN'EAU</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="inscription.html">BLOG</a>
-          </li>
-        </ul>
-      </div>
-      <div class="quote_btn-container">
-        <a href="">
-              <span>
-                Inscription
-              </span>
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </a>
-        <form class="form-inline">
-          <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
-            <i class="fa fa-search" aria-hidden="true"></i>
-          </button>
-        </form>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="">
+        <span>
+          <div class="img-box">
+            <img src="assets/images/seneaun.png" alt="SEN'EAU" width="150" height="100">
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="d-flex mx-auto flex-column flex-lg-row justify-content-between align-items-center">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link" *ngIf="localStorage.getItem('token')"  (click)="onGoBack()" >RETOUR </a>
+            </li>
+
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="" >ACCUEIL </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" routerLink="" *ngIf="localStorage.getItem('token')" >PROPRIETAIRES </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLink="utilisateur/liste-utilisateurs" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
+                COMPTEURS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="list-compteur">Liste compteurs</a></li>
+                <li><a class="dropdown-item" routerLink="verifier-proprietaire">Nouveau compteur</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLink="utilisateur/liste-utilisateurs" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
+                UTILISATEURS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="utilisateur/liste-utilisateurs">Liste utilisateurs</a></li>
+                <li><a class="dropdown-item" routerLink="utilisateur/creer-utilisateur">Nouvel utilisateur</a></li>
+              </ul>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"  routerLink="" *ngIf="!localStorage.getItem('token')"> SEN'EAU</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="" *ngIf="!localStorage.getItem('token')">SERVICES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="verifier-compteur" *ngIf="!localStorage.getItem('token')">PREPAIEMENT</a>
+            </li>
+
+
+          </ul>
+        </div>
+        <div class="quote_btn-container">
+          <a routerLink="/utilisateur/login" class="btn btn-success" *ngIf="!localStorage.getItem('token')">
+            <span class="text-white">
+              Se connecter
+            </span>
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+          <a routerLink="/utilisateur/profile-utilisateur" class="btn btn-success" *ngIf="localStorage.getItem('token')">
+            <span class="text-white">
+              PROFIL
+            </span>
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+          <form class="form-inline">
+            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   </nav>
+  <!--  -->
+
 </header>
 <!-- end header section -->

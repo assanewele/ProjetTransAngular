@@ -1,0 +1,31 @@
+<body class="sub_page">
+
+<div class="hero_area"></div>
+
+<!-- contact section -->
+<section class="contact_section long_section">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="form_container px-4 py-4" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+
+
+
+        <form [formGroup]="loginForm">
+          <h3 class="text-center" style="margin-bottom: 20px">Connexion</h3>
+          <div>
+            <input type="email" formControlName="email" placeholder="Email" />
+          </div>
+          <div>
+            <input type="password" formControlName="password" placeholder="Mot de passe"/>
+          </div>
+          <div class="btn_box d-flex justify-content-center" (click)="onSubmit()">
+            <button>Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
+
+</body>

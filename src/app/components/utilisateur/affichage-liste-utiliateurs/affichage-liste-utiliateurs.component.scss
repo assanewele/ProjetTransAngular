@@ -1,0 +1,19 @@
+.card{
+  margin:auto;
+  max-width: 500px;
+  border-radius: 20px;
+  transition: transform 0.3s ease; /* Transition pour le mouvement */
+}
+
+.card:hover{
+  transform: scale(1.05); /* Exemple d'effet de survol : agrandir l'élément */
+}
+
+.onModifyDiv{
+  text-align: end;
+}
+
+
+/* Styles pour les boutons */
+
+

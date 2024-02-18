@@ -2,12 +2,16 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UtilisateurService} from "../../../services/utilisateur/utilisateur.service";
 import {PopupsService} from "../../../services/popups/popups.service";
+import {Router} from "@angular/router";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-creer-utilisateur',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './creer-utilisateur.component.html',
   styleUrl: './creer-utilisateur.component.scss'
@@ -18,7 +22,7 @@ export class CreerUtilisateurComponent {
 
   constructor(private formbuilder: FormBuilder,
               private userService: UtilisateurService,
-
+              private router: Router,
               private popupsService: PopupsService
   )
   {
@@ -67,12 +71,15 @@ export class CreerUtilisateurComponent {
         if (response.statusCode === 200) {
           console.log("Yess")
           this.popupsService.successPopup(`The user ${this.email.value} is successfully created `);
+          this.router.navigateByUrl("");
         }
       },
       () => {
         alert("there is an error")
       });
   }
-
+  onCancel(){
+    this.router.navigateByUrl("")
+  }
 
 }

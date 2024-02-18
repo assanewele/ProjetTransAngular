@@ -1,0 +1,44 @@
+
+<body class="contact_section container pb-3 mt-0">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h4 class="text-center"> Enregistrer une adresse </h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="adresseForm" (ngSubmit)="onSubmit()">
+                        
+                        <div class="form-group my-1">
+                            <label>Region</label>
+                            <input type="text" class="form-control" formControlName="region">
+                        </div>
+                        <div class="form-group my-1">
+                            <label>Commune</label>
+                            <input type="text" class="form-control" formControlName="commune">
+                        </div>
+                        <div class="form-group my-1">
+                            <label>Ville ou Village</label>
+                            <input type="text" class="form-control" formControlName="village">
+                        </div>
+                        <div class="form-group my-1">
+                            <label>Quartier</label>
+                            <input type="text" class="form-control" formControlName="quartier">
+                        </div>
+                        <div class="form-group my-1">
+                            <label>Numero de maison</label>
+                            <input type="number" class="form-control" formControlName="numeroMaison">
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-around my-2">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="retour()">Annuler</button>
+                                <button type="submit" class="btn btn-success">Ajouter</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

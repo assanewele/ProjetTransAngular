@@ -1,0 +1,11 @@
+<div class="my-2 class" (click)="onClicOnSpecifiedUser()">
+  <div class="card px-2 py-2 row">
+    <div class="">
+      <div class="h6 text-center" >{{user.prenom}} {{user.nom}}</div>
+      <div class="d-flex " style="justify-content: space-between">
+        <span>{{user.email}}</span>
+        <button class="custom-button" (click)="onClicOnSpecifiedUser()"><i class="bi bi-pencil"></i></button>
+      </div>
+    </div>
+  </div>
+</div>

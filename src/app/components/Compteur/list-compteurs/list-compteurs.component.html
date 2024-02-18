@@ -1,0 +1,50 @@
+
+<section class="pb-3 my-0 container">
+    <div class="container-lg">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h2>Tous les Compteurs</h2>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead >
+                        <tr style="color: rgb(20, 220, 183);">
+                            <th>Numéro de Compteur</th>
+                            <th>Solde</th>
+                            <th>Nom du Propriétaire</th>
+                            <th>Date de Création</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (compteur of ListCompteur; track $index) {
+                        <tr>
+                            <td> {{ compteur.numeroCompteur}}</td>
+                            <td> {{ compteur.solde}}</td>
+                            <td> {{ compteur.fullnameProprietaire}}</td>                            
+                            <td><i class="fa fa-calendar"></i> {{ compteur.dateCreation | date: 'dd/MM/yyyy' }}</td>
+                            <td class="d-flex justify-content-between">
+                                <button class="btn btn-info" (click)="voirDetails(compteur.id)">
+                                    <i class="fa fa-eye"></i> Voir
+                                </button>
+                                <button class="btn btn-warning" (click)="mettreAJour(compteur.id)">
+                                    <i class="fa fa-edit"></i> Mettre à Jour
+                                </button>
+                                <button class="btn btn-danger" (click)="supprimer(compteur.id)">
+                                    <i class="fa fa-trash"></i> Supprimer
+                                </button>
+                            </td>
+                            
+                        </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

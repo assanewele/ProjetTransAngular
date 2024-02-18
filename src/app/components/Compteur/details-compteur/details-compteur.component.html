@@ -1,0 +1,148 @@
+<!-- <section class="text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Détails du Compteur
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">IdCompteur</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">DatePrépaiement</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">montant</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">VolumePrepaye</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">3</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Nombrepulsionprepaye</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Détails du Compteur
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Numéro de Compteur</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.numeroCompteur }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Solde</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.solde }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Nom du Propriétaire</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.fullnameProprietaire }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Date de Création</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.dateCreation | date :"dd/MM/yyyy" }}</p>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Consommation Journalière</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.consommationJournaliere !== null ? compteur.consommationJournaliere : 'Indéfini' }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Seuil de Consommation pour Alerte</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ compteur.seuilDeConsommationPourAlerte !== null ? compteur.seuilDeConsommationPourAlerte : 'Indéfini' }}</p>
+                            </div>
+                        </div>
+                        <!-- Template HTML ajusté -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Région</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ adresse.region }}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p class="text-muted">Commune</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="font-weight-bold">{{ adresse.commune }}</p>
+                            </div>
+                        </div>
+
+
+                        <hr>
+                        <div class="row mt-4">
+                            <div class="col-md-12 d-flex justify-content-around">
+                                <button class="btn btn-secondary mr-2" (click)="retour()">Retour</button>
+                                <button class="btn btn-primary mr-2" (click)="modifier()">Modifier</button>
+                                <button class="btn btn-danger mr-2" (click)="supprimer()">Supprimer</button>
+                                <button class="btn btn-success" (click)="fairePrepaiement()">Faire un prépaiement</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

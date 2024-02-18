@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center mt-3 mb-2">
+  <div class="card p-4">
+    <h4 class="mb-4">Modification des informations</h4>
+    <form [formGroup]="modifyUserInfoForm">
+      <div class="form-group">
+        <label for="firstName" class="" style="margin-bottom: 8px">Prenom:</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName"  placeholder="Enter first name">
+      </div>
+      <div class="form-group">
+        <label for="lastName" style="margin-bottom: 8px; margin-top: 10px">Nom:</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Enter last name">
+      </div>
+      <div class="form-group">
+        <label for="phoneNumber" style="margin-bottom: 8px; margin-top: 10px">Telephone:</label>
+        <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter your phone number">
+        <div class="d-flex align-items-center justify-content-center mt-3">
+          <button (click)="onCancel()" type="button" class="btn btn-outline-secondary btn-block" style="margin-right: 30%">Cancel</button>
+          <button (click)="onModify()"  type="button" class="custom-button">Modify</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="container py-3 card parentDiv">
+  <h4 class="h4 text-center">Modification des roles</h4>
+  <div class=" row " >
+    <div class="col-7 " *ngIf="userRoles.length!==0">
+      <h5>L'utilisateur <span class="email">{{email}}</span> a ce(s) role(s):</h5>
+      <div *ngFor="let role of userRoles">
+        <span>{{role.name}}</span>
+        <span (click)="onRemoveRoleFromUser(role.name)" title="This button remove the related role from the user" ><i class="bi bi-x-circle"></i></span>
+      </div>
+    </div>
+    <div class="col-5 " *ngIf="rolesToAssign.length!==0">
+      <h5>Assigner un role à <span class="email">{{email}}</span></h5>
+      <div *ngFor="let role of rolesToAssign">
+        <span>{{role.name}}</span>
+        <span title="This button assigns the corresponding role to the corresponding user"  (click)="onAssign(role.name)"><i class="bi bi-plus-circle"></i></span>
+      </div>
+    </div>
+  </div>
+</div>

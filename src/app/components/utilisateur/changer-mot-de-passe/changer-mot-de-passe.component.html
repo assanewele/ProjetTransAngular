@@ -1,0 +1,27 @@
+<body class="sub_page">
+
+<div class="hero_area"></div>
+<!-- contact section -->
+<section class="contact_section long_section">
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="col-md-6">
+      <div class="form_container px-4 py-4" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <form [formGroup]="changePasswordForm">
+          <h3 class="text-center" style="margin-bottom: 20px">Changement de mot de passe</h3>
+          <div>
+            <input type="password" formControlName="currentPassword" placeholder="Actuel mot de passe" />
+          </div>
+          <div>
+            <input type="password" formControlName="newPassword" placeholder="Nouveau mot de passe"/>
+          </div>
+          <div class="btn_box d-flex justify-content-center" (click)="onChangePassword()">
+            <button>Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
+
+</body>

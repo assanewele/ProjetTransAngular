@@ -1,0 +1,52 @@
+
+<div class="contact_section  container pb-3">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="card-title text-center">Vérification du propriétaire</h5>
+                </div>
+                <div class="card-body">
+                
+                    @if(verificationSuccess){
+                    <div class="alert alert-success" role="alert">
+                        Propriétaire vérifié avec succès!
+                    </div>
+                    }
+
+                    @if(!verificationSuccess){
+                    <form>
+                        <div class="form-group">
+                            <label for="cniProprietaire">CNI du propriétaire:</label>
+                            <input type="text" id="cniProprietaire" class="form-control" [(ngModel)]="cniProprietaire"
+                                name="cniProprietaire" placeholder="Entrez le CNI du propriétaire">
+                        </div>
+                        <div class="d-flex justify-content-center">
+                        <button type="button" class="btn btn-lg btn-primary mt-3 text-center"
+                            (click)="verifierProprietaire()">Vérifier</button>
+                        </div>
+                    </form>
+                    }
+                    @if(ProprietaireExistPas){
+                        <div class="alert alert-danger my-1" role="alert">
+                            Propriétaire n'existe pas dans la base de données
+                        </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="btn btn-warning text-center" (click)="creerProprietaire()">Créer
+                            Proprietaire</button>
+                    </div>
+                    }
+                    @if(verificationSuccess){
+
+                    <div class="d-flex justify-content-around mt-3">
+                        <button type="button" class="btn btn-success ml-2"  (click)="voirProprietaire()">Voir</button>
+                        <button type="button" class="btn btn-primary ml-2" (click)="creerCompteur()">Créer Compteur</button>
+                    </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
