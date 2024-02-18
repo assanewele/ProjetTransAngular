@@ -1,0 +1,59 @@
+<!-- <section class="contact_section  long_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form_container">
+            <div class="heading_container">
+              <h2 class="text-center">
+                Faire un prépaiement pour mon compteur Numero:
+              </h2>
+            </div>
+            <form action="">
+                <div>
+                    <input type="text" placeholder="numéroCompteur" />
+                  </div>
+                  <div>
+                    <input type="number" placeholder="montant" />
+                  </div>
+                  <div>
+                  <div class="btn_box">
+                    <button type="submit">
+                      Soumettre
+                    </button>
+                  </div>
+                </div>
+            </form>
+          </div>
+        </div> 
+      </div>
+    </div>
+  </section> -->
+
+  <section class="contact_section long_section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form_container">
+                    <div class="">
+                        <h5 class="text-center mb-3">
+                            Faire un prépaiement pour mon compteur Numero: {{ compteur.numeroCompteur }}
+                        </h5>
+                    </div>
+                    <form [formGroup]="prepaiementForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                          <input type="text" formControlName="compteurId" class="form-control" placeholder="Numéro de compteur" />
+                        </div>
+                        <div class="form-group">
+                          <input type="number" formControlName="montant" class="form-control" placeholder="Montant" />
+                        </div>
+                        <div class="btn_box text-center">
+                          <button type="submit" class="btn btn-primary">
+                            Soumettre
+                          </button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

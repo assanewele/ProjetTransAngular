@@ -24,8 +24,14 @@
             <li class="nav-item ">
               <a class="nav-link" routerLink="" >ACCUEIL </a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" routerLink="" *ngIf="localStorage.getItem('token')" >PROPRIETAIRES </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" routerLink="utilisateur/liste-utilisateurs" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
+                PROPRIETAIRES
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/liste-proprietaires">Liste propriétaires</a></li>
+                <li><a class="dropdown-item" routerLink="/creer-proprietaire">Nouveau propriétaire</a></li>
+              </ul>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" routerLink="utilisateur/liste-utilisateurs" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
@@ -38,7 +44,7 @@
             </li>
 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" routerLink="utilisateur/liste-utilisateurs" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
+              <a class="nav-link dropdown-toggle" *ngIf="localStorage.getItem('token')" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: normal">
                 UTILISATEURS
               </a>
               <ul class="dropdown-menu">

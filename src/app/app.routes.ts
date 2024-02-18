@@ -18,7 +18,6 @@ import {DetailsCompteurComponent} from "./components/Compteur/details-compteur/d
 import {UpdateCompteurComponent} from "./components/Compteur/update-compteur/update-compteur.component";
 import {VerifierCompteurComponent} from "./components/Compteur/verifier-compteur/verifier-compteur.component";
 import {CrerrProprietaireComponent} from "./components/Proprietaire/crerr-proprietaire/crerr-proprietaire.component";
-import {ListProprietaireComponent} from "./components/Proprietaire/list-proprietaire/list-proprietaire.component";
 import {
   DetailsProprietaireComponent
 } from "./components/Proprietaire/details-proprietaire/details-proprietaire.component";
@@ -30,6 +29,11 @@ import {CreerAdresseComponent} from "./components/Adresse/creer-adresse/creer-ad
 import {ListAdresseComponent} from "./components/Adresse/list-adresse/list-adresse.component";
 import {DetailsAdresseComponent} from "./components/Adresse/details-adresse/details-adresse.component";
 import {UpdateAdresseComponent} from "./components/Adresse/update-adresse/update-adresse.component";
+import {ListeProprietairesComponent} from "./components/Proprietaire/liste-proprietaires/liste-proprietaires.component";
+import {CreerPrepaiementComponent} from "./components/Prepaiement/creer-prepaiement/creer-prepaiement.component";
+import {ListPrepaiementComponent} from "./components/Prepaiement/list-prepaiement/list-prepaiement.component";
+import {DetailsPrepaiementComponent} from "./components/Prepaiement/details-prepaiement/details-prepaiement.component";
+import {UpdatePrepaiementComponent} from "./components/Prepaiement/update-prepaiement/update-prepaiement.component";
 
 export const routes: Routes = [
 
@@ -75,7 +79,7 @@ export const routes: Routes = [
   },
 
   {
-    path:"list-proprietaire", component: ListProprietaireComponent
+    path:"liste-proprietaires", component: ListeProprietairesComponent
   },
   {
     path:"details-proprietaire/:proprietaireId", component: DetailsProprietaireComponent
@@ -106,4 +110,16 @@ export const routes: Routes = [
 //###################################################################################################
   // Prepaiment routes
 
+  {
+    path: "faire-prepaiement/:compteurId", component: CreerPrepaiementComponent
+  },
+  {
+    path:"list-prepaiment", component: ListPrepaiementComponent
+  },
+  {
+    path:"details-prepaiment/:repaimentId", component: DetailsPrepaiementComponent
+  },
+  {
+    path:"modifier-prepaiment/:repaimentId", component: UpdatePrepaiementComponent
+  },
 ];

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { LireProprietaireModel } from '../../models/Proprietaire/lire-proprietaire.model';
 import { UpdateProprietaireComponent } from '../../components/Proprietaire/update-proprietaire/update-proprietaire.component';
 import { CreerProprietaireModel } from '../../models/Proprietaire/creer-proprietaire.model';
+import {ApiResponseModel} from "../../models/reponse/api-response.model";
 
 @Injectable({
   providedIn: 'root'
@@ -38,8 +39,8 @@ export class ProprietaireService {
   }
 
   // POST: api/Proprietaires
-  createProprietaire(proprietaire: CreerProprietaireModel): Observable<LireProprietaireModel> {
-    return this.http.post<LireProprietaireModel>(this.apiUrl, proprietaire);
+  createProprietaire(proprietaire: CreerProprietaireModel): Observable<ApiResponseModel<string>> {
+    return this.http.post<ApiResponseModel<string>>(this.apiUrl, proprietaire);
   }
 
   // DELETE: api/Proprietaires/{id}
